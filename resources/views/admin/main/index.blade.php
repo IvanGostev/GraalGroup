@@ -35,7 +35,7 @@
                         <div class="icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <a href="{{ route('admin.user.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -50,39 +50,39 @@
                         <div class="icon">
                             <i class="far fa-clipboard"></i>
                         </div>
-                        <a href="{{ route('admin.course.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{ $data['categoriesCount'] }}</h3>
+{{--                <div class="col-lg-3 col-6">--}}
+{{--                    <!-- small box -->--}}
+{{--                    <div class="small-box bg-warning">--}}
+{{--                        <div class="inner">--}}
+{{--                            <h3>{{ $data['categoriesCount'] }}</h3>--}}
 
-                            <p>Категории</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-scroll"></i>
-                        </div>
-                        <a href="{{ route('admin.category.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{ $data['tagsCount']}}</h3>
+{{--                            <p>Категории</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="icon">--}}
+{{--                            <i class="fas fa-scroll"></i>--}}
+{{--                        </div>--}}
+{{--                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!-- ./col -->--}}
+{{--                <div class="col-lg-3 col-6">--}}
+{{--                    <!-- small box -->--}}
+{{--                    <div class="small-box bg-danger">--}}
+{{--                        <div class="inner">--}}
+{{--                            <h3>{{ $data['tagsCount']}}</h3>--}}
 
-                            <p>Тэги</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="{{ route('admin.tag.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+{{--                            <p>Тэги</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="icon">--}}
+{{--                            <i class="ion ion-pie-graph"></i>--}}
+{{--                        </div>--}}
+{{--                        <a href="" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <!-- ./col -->
             </div>
             <!-- /.row -->

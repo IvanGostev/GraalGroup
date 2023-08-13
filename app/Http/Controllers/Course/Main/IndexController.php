@@ -11,6 +11,6 @@ class IndexController extends Controller
     public function __invoke()
     {
         $courses = Course::all();
-        return view('course.main.index', compact('courses'));
+        return view('courses.main.index', compact('courses'));
     }
 }

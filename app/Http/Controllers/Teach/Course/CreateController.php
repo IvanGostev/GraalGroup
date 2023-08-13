@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Teach\Course;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
     public function __invoke()
     {
-       return view('admin.user.create');
+       return view('teach.courses.create');
     }
 }

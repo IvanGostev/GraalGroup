@@ -1,18 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Teach\Course;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\UpdateRequest;
-use App\Models\User;
+use App\Http\Requests\Course\UpdateRequest;
+use App\Models\Course;
 
 class UpdateController  extends Controller
 {
-    public function __invoke(UpdateRequest $request, User $user)
+    public function __invoke(UpdateRequest $request, Course $course): string
     {
+
         $data = $request->validated();
-        $user->update($data);
-        return view('admin.user.show', compact('user'));
+
+        $course->update($data);
+
+        return "OK";
     }
 }
 

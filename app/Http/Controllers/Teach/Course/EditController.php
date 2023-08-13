@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Teach\Course;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\User;
 
 class EditController extends Controller
 {
-    public function __invoke(User $user) : void
+    public function __invoke(Course $course)
     {
-        $roles = User::getRoles();
 
-        return view('admin.user.edit', compact('user', 'roles'));
+        return view('teach.courses.edit', compact('course'));
     }
 }

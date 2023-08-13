@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->unsignedBigInteger('course_id');
-            $table->integer('number');
             $table->softDeletes();
             $table->timestamps();
             $table->index('course_id', 'hometask_course_idx');

@@ -9,9 +9,9 @@ use App\Models\User;
 
 class DestroyController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(Course $course)
     {
-        $user->delete();
-        return redirect()->route('admin.user.index');
+        $course->delete();
+        return redirect()->route('teach.course.index');
     }
 }

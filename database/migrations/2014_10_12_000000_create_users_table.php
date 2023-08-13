@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nickname')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->unsignedSmallInteger('role')->default(0);
             $table->string('img')->nullable();
-            $table->unsignedSmallInteger('is_admin')->default(0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

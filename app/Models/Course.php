@@ -9,5 +9,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Course extends Model
 {
     use HasFactory;
+    use SoftDeletes;
+
+    protected $table = "courses";
+    protected $guarded = false;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
 
 }
