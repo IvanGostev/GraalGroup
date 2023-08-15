@@ -12,17 +12,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'nickname',
-        'email',
-        'password',
-    ];
+    protected $table = "users";
+    protected $guarded = false;
+//    protected $fillable = [
+//        'nickname',
+//        'email',
+//        'password',
+//    ];
 
     /**
      * The attributes that should be hidden for serialization.

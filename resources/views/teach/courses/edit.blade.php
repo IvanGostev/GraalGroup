@@ -26,7 +26,7 @@
                             </div>
                             <div class="address">
                                 <a class="btn get-started-btn" href="{{ route('teach.lessons.create', $course->id) }}"> Уроки </a>
-                                <a class="btn get-started-btn" href=""> ДЗ </a>
+                                <a class="btn get-started-btn" href="{{ route('teach.hometask.create', $course->id) }}"> ДЗ </a>
                             </div>
                             <div class="address">
 

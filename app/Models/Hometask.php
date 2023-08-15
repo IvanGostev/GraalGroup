@@ -13,4 +13,8 @@ class Hometask extends Model
 
     protected $table = "hometasks";
     protected $guarded = false;
+//    public function statusHometasks()
+//    {
+//        return $this->hasMany(StatusHometask::class, 'hometask_id', 'id');
+//    }
 }

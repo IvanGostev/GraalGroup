@@ -58,8 +58,8 @@
                 <li><a href="{{ route('teach.course.index') }}">Преподавание</a></li>
                 <li class="dropdown"><a href="#"><span>Мой профиль</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Перейти</a></li>
-                        <li><a href="#">Редактировать</a></li>
+                        <li><a href="{{ route('profile.main.show', auth()->user()->id) }}">Перейти</a></li>
+                        <li><a href="{{ route('profile.main.edit', auth()->user()->id) }}">Редактировать</a></li>
                     </ul>
                 </li>
             </ul>

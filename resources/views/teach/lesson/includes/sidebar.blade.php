@@ -50,6 +50,17 @@
                     </a>
                 </li>
             @endforeach
+            <li><p>Домашняя задание</p></li>
+            @foreach($hometasks as $hometask)
+                <li class="nav-item">
+                    <a href="{{ route('teach.hometask.edit', [ $hometask->id,$course->id]) }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            {{$hometask->title}}
+                        </p>
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

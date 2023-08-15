@@ -1,15 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Course\Main;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Course;
 use App\Models\User;
 
 class ShowController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(Course $course)
     {
-        return view('admin.user.show', compact('user'));
+        $courses = User::where('id', '!=', $course->id)
+            ->get()
+            ->take(3);
+        return view('courses.main.show', compact('course', 'courses'));
     }
 }

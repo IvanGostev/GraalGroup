@@ -43,7 +43,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('course.main.index');
-//        Route::get('/{course}', 'ShowController')->name('course.main.show');
+        Route::get('/{course}', 'ShowController')->name('course.main.show');
 //        Route::get('/create', 'CreateController')->name('course.main.create');
 //        Route::post('/', 'StoreController')->name('course.main.store');
 //        Route::get('/{course}/edit', 'EditController')->name('course.main.edit');
@@ -52,7 +52,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses
     });
 
 });
+Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profile'], function () {
+    Route::group(['namespace' => 'Main'], function () {
+        Route::get('/{user}', 'ShowController')->name('profile.main.show');
+        Route::get('/{user}/edit', 'EditController')->name('profile.main.edit');
+        Route::patch('/{user}', 'UpdateController')->name('profile.main.update');
+//        Route::delete('/{course}', 'DestroyController')->name('course.main.destroy');
+    });
 
+});
 Route::group(['namespace' => 'App\Http\Controllers\Teach', 'prefix' => 'teach'], function () {
     Route::group(['namespace' => 'Course',], function () {
         Route::get('/', 'IndexController')->name('teach.course.index');
@@ -96,4 +104,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
 //        Route::get('/', 'IndexController')->name('admin.user.index');
 //        Route::delete('/{user}', 'DestroyController')->name('admin.user.destroy');
 //    });
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Training', 'prefix' => 'training'], function () {
+    Route::group(['namespace' => 'Main'], function () {
+        Route::get('/course/{course}/lesson/{lesson}', 'ShowController')->name('training.main.show');
+        Route::get('/course/{course}/homework/{hometask}', 'CreateController')->name('training.main.create');
+        Route::post('/', 'StoreController')->name('training.main.store');
+    });
+
 });
