@@ -53,12 +53,6 @@ class CreateController extends Controller
         foreach ($hometasks as $hometask) {
             $contents[$count] = $hometask;
             $contents[$count]['type'] = 'hometask';
-            var_dump((UserHometask::where('course_id', $course->id)
-                ->where('hometask_id', $hometask->id)
-                ->where('user_id', auth()->user()->id)
-                ->get()));
-            exit();
-            $contents[$count]['status'] = (int)(UserHometask::where('course_id', $course->id)->where('hometask_id', $hometask->id)->where('user_id', auth()->user()->id)->get());
             $count++;
         }
 
@@ -73,7 +67,6 @@ class CreateController extends Controller
                 }
             }
         }
-
         return view('training.main.create', compact('course', 'contents', 'thisHometask'));
     }
 }

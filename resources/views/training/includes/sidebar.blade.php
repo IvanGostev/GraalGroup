@@ -68,7 +68,7 @@
                 @endif()
                 @if($content['type'] == 'hometask')
                         <?php
-                            switch (($content['status'] ?? 0)) {
+                            switch (($content->statusHometask->status ?? 0)) {
                                 case 0:
                                     $status = ['title' => 'Не приступал', 'color' => 'danger'];
                                     break;

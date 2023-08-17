@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,41 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('main');
+})->name('main')->middleware(Authenticate::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-//Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
-//    Route::get('/', 'IndexController');
-//});
-
-
-//Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses'], function () {
-//    Route::group(['namespace' => 'Main'], function () {
-//        Route::get('/', 'IndexController')->name('course.main.index');
-//    });
-//});
-
-//Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal'], function () {
-//    Route::group(['namespace' => 'Main'], function () {
-//        Route::get('/', 'IndexController')->name('personal.main.index');
-//    });
-//});
-
-
-Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses', ], function () {
+    Route::group(['namespace' => 'MyCourses', 'prefix' => 'my'], function () {
+        Route::get('/', 'IndexController')->name('course.my.index');
+    });
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('course.main.index');
         Route::get('/{course}', 'ShowController')->name('course.main.show');
-//        Route::get('/create', 'CreateController')->name('course.main.create');
-//        Route::post('/', 'StoreController')->name('course.main.store');
-//        Route::get('/{course}/edit', 'EditController')->name('course.main.edit');
-//        Route::patch('/{course}', 'UpdateController')->name('course.main.update');
-//        Route::delete('/{course}', 'DestroyController')->name('course.main.destroy');
     });
+
 
 });
 Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profile'], function () {
@@ -57,7 +37,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Profile', 'prefix' => 'profil
         Route::get('/{user}', 'ShowController')->name('profile.main.show');
         Route::get('/{user}/edit', 'EditController')->name('profile.main.edit');
         Route::patch('/{user}', 'UpdateController')->name('profile.main.update');
-//        Route::delete('/{course}', 'DestroyController')->name('course.main.destroy');
     });
 
 });
@@ -100,10 +79,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
         Route::delete('/{user}', 'DestroyController')->name('admin.user.destroy');
     });
-//    Route::group(['namespace' => 'Coursre', 'prefix' => 'courses'], function () {
-//        Route::get('/', 'IndexController')->name('admin.user.index');
-//        Route::delete('/{user}', 'DestroyController')->name('admin.user.destroy');
-//    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Training', 'prefix' => 'training'], function () {
@@ -111,6 +86,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Training', 'prefix' => 'train
         Route::get('/course/{course}/lesson/{lesson}', 'ShowController')->name('training.main.show');
         Route::get('/course/{course}/homework/{hometask}', 'CreateController')->name('training.main.create');
         Route::post('/', 'StoreController')->name('training.main.store');
+    });
+
+});
+Route::group(['namespace' => 'App\Http\Controllers\CheckHometask', 'prefix' => 'check-hometask'], function () {
+    Route::group(['namespace' => 'Main'], function () {
+        Route::get('/course/{course}', 'IndexController')->name('checkHometask.main.index');
+        Route::get('/course/{course}/hometask/{hometask}', 'CreateController')->name('checkHometask.main.create');
+        Route::post('/', 'UpdateController')->name('checkHometask.main.store');
     });
 
 });

@@ -13,8 +13,21 @@ class Hometask extends Model
 
     protected $table = "hometasks";
     protected $guarded = false;
-//    public function statusHometasks()
+
+
+    public function statusHometask() {
+        return $this->hasOne(StatusHometask::class, 'hometask_id', 'id');
+    }
+
+//    public function state()
 //    {
-//        return $this->hasMany(StatusHometask::class, 'hometask_id', 'id');
+//        return $this->belongsTo(StatusHometask::class, 'hometask_id', 'id');
+//    }
+//
+
+
+//    public function state()
+//    {
+//        return $this->hasMany(Comment::class, 'post_id', 'id');
 //    }
 }

@@ -4,10 +4,9 @@
 
         <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs">
-            <div class="container" style="display: flex">
-                <h2>Мои Курсы</h2>
-                <h2><a href="{{ route('teach.course.create') }}" class="btn get-started-btn"
-                       style="background-color: green">Новый курс</a></h2>
+            <div class="container">
+                <h2>Курсы</h2>
+                <p>Начните осваивать необходимые навыки и знания вместе со GRAAL GROUP.</p>
             </div>
         </div><!-- End Breadcrumbs -->
 
@@ -16,7 +15,9 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
                     @foreach($courses as $course)
+
 
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                             <div class="course-item">
@@ -27,8 +28,7 @@
                                         <p class="price">${{$course->price}}</p>
                                     </div>
 
-                                    <h3><a href="{{ route('course.main.show', $course->id) }}">{{$course->title}}</a>
-                                    </h3>
+                                    <h3><a href="{{ route('course.main.show', $course->id) }}">{{$course->title}}</a></h3>
                                     <p>{{$course->description}}</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-profile d-flex align-items-center">
@@ -40,24 +40,12 @@
                                             &nbsp;&nbsp;
                                             <i class="bx bx-heart"></i>&nbsp;65
                                         </div>
-                                        <a href="{{ route('teach.course.edit', $course->id) }}">Edit</a>
-                                        <form action="{{ route('teach.course.destroy', $course->id) }}" method="Post">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="text-danger bg-transparent border-0">
-                                                Delete
-                                            </button>
-                                        </form>
-
                                     </div>
-
                                 </div>
-                                            <a href="{{ route('checkHometask.main.index', $course->id) }}" class="btn btn-outline-primary" style="width: 100%;">Проверка домашнего задание</a>
-
                             </div>
-
                         </div>
                     @endforeach
+
 
                 </div>
 
