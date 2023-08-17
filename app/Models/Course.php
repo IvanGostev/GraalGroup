@@ -20,7 +20,7 @@ class Course extends Model
     }
 
     public function tied() {
-        return $this->hasOne(UserCourse::class, 'user_id', 'id');
+        return $this->belongsTo(UserCourse::class, 'user_id', 'id');
     }
 
 }

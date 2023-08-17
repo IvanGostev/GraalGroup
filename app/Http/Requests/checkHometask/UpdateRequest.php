@@ -33,12 +33,14 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'content.required' => 'Это поле необходимо заполнить',
-            'content.string' => 'Тип данных должен быть строкой',
+            'comment.required' => 'Это поле необходимо заполнить',
+            'comment.string' => 'Тип данных должен быть строкой',
             'course_id.required' => 'Это поле необходимо заполнить',
             'course_id.integer' => 'Тип данных должен быть число',
             'hometask.required' => 'Это поле необходимо заполнить',
             'hometask.integer' => 'Тип данных должен быть число',
+            'status.required' => 'Это поле необходимо заполнить',
+            'status.integer' => 'Тип данных должен быть число',
         ];
     }
 }

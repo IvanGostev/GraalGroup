@@ -21,7 +21,11 @@
 {{--                    <div class="form-group">--}}
 {{--                        <a href="{{ $thisHometask->href->type == 'lesson' ? route('training.main.show', $course->id, $thisHometask->href->id) : route('training.main.create', $course->id, $thisHometask->href->id)}}" class="btn btn-primary">Следующий шаг</a>--}}
 {{--                    </div>--}}
-                <!-- /.row -->
+                 @if($thisHometask->statusHometask->comment)
+                    <h5>Ответ преподавателя</h5>
+                    <div class="card-body">{!! $thisHometask->statusHometask->comment !!}</div>
+                 @endif
+
             </div><!-- /.container-fluid -->
             <form action=" {{ route('training.main.store') }}" method="post">
                 @csrf

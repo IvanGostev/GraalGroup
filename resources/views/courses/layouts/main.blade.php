@@ -43,7 +43,7 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto"><a href="index.html">
+        <h1 class="logo me-auto"><a href="/">
                 <img src="{{asset('assets/img/logo.png')}}" alt="">
             </a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -55,14 +55,19 @@
                 <li><a class="active" href="{{ route('main') }}">Главная страница</a></li>
 
                 <li><a href="{{ route('course.main.index') }}">Курсы</a></li>
+                @if (auth()->user() )
                 <li><a href="{{ route('teach.course.index') }}">Преподавание</a></li>
                 <li><a href="{{ route('course.my.index') }}">Моё обучение</a></li>
                 <li class="dropdown"><a href="#"><span>Мой профиль</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-{{--                        <li><a href="{{ route('profile.main.show', auth()->user()->id) }}">Перейти</a></li>--}}
-{{--                        <li><a href="{{ route('profile.main.edit', auth()->user()->id) }}">Редактировать</a></li>--}}
+                        <li><a href="{{ route('profile.main.show', auth()->user()->id) }}">Перейти</a></li>
+                        <li><a href="{{ route('profile.main.edit', auth()->user()->id) }}">Редактировать</a></li>
+                        @if (auth()->user()->role == 1)
+                        <li><a href="{{ route('admin.user.index') }}">Админ панель</a></li>
+                        @endif
                     </ul>
                 </li>
+                @endif
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -112,9 +117,8 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Сервисы</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Главная страница</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Курсы</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Моё обучение</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Вход</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Регистрация</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Мой профиль</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Настройки</a></li>
                     </ul>

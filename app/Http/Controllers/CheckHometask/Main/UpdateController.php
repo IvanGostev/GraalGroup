@@ -11,13 +11,13 @@ use App\Models\StatusHometask;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request,Course $course, StatusHometask $hometask)
+    public function __invoke(Course $course, StatusHometask $hometask, UpdateRequest $request ,)
     {
         $data = $request->validated();
         $hometask->update($data);
 
-        $hometasks = Hometask::where('user_id', auth()->user()->id);
-        return redirect()->route('teach.course.index', $hometasks);
 
+        $hometasks = Hometask::where('user_id', auth()->user()->id);
+        return back();
     }
 }

@@ -24,8 +24,9 @@
         </div>
         <!-- Small boxes (Stat box) -->
 
-        <form action=" {{ route('checkHometask.main.store') }}" method="post">
+        <form action=" {{ route('checkHometask.main.update', [$course->id, $hometask->id]) }}" method="post">
             @csrf
+            @method('patch')
             <div class="form-group" style="margin: 2% 10% 2% 10%">
                 <label>Статус</label>
                 <select name="status" class="form-control">
@@ -34,9 +35,9 @@
                 </select>
             </div>
             <div class="form-group mt-3" style="margin: 2% 10% 2% 10%">
-                                <textarea class="form-control" name="content" rows="8"
+                                <textarea class="form-control" name="comment" rows="8"
                                           placeholder="Коментарий 'Не обязательно'"
-                                          required></textarea>
+                                          required>{{$hometask->comment}}</textarea>
             </div>
             <input hidden="hidden" name="course_id" value="{{$course->id}}">
             <input hidden="hidden" name="hometask_id" value="{{$hometask->id}}">

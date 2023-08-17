@@ -76,7 +76,7 @@
                                     $status = ['title' => 'Отправлено на проверку', 'color' => 'primary'];
                                     break;
                                 case 2:
-                                    $status = ['title' => 'Не приступал', 'color' => 'success'];
+                                    $status = ['title' => 'Принято', 'color' => 'success'];
                                     break;
                                 case 3:
                                     $status = ['title' => 'Отправлено на доработку', 'color' => 'warning'];

@@ -30,6 +30,7 @@
                             <!-- Card -->
                             <div class="card rounded-3">
                                 <!-- Card header -->
+
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="tab-content" id="tabContent">
@@ -57,7 +58,7 @@
                                         <del class="fs-4 text-muted">$750</del>
                                     </div>
                                     <div class="d-grid">
-                                        <a href="{{ route('training.main.show', [$course->id, 1]) }}" class="btn btn-primary mb-2">Купить</a>
+                                        <a href="{{ route('training.main.show', [$course->id, 1]) }}" class="btn btn-primary mb-2">{{ $course->tied ? 'Открыть' : 'Купить' }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +87,7 @@
                     <div class="pt-12 pb-3">
                         <div class="row d-md-flex align-items-center mb-4">
                             <div class="col-12">
-                                <h2 class="mb-0">Related Courses</h2>
+                                <h2 class="mb-0">Похожие курсы</h2>
                             </div>
                         </div>
                         <div class="row">

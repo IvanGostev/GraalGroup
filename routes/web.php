@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
+
 Route::group(['namespace' => 'App\Http\Controllers\Course', 'prefix' => 'courses', ], function () {
     Route::group(['namespace' => 'MyCourses', 'prefix' => 'my'], function () {
         Route::get('/', 'IndexController')->name('course.my.index');
@@ -66,7 +67,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Teach', 'prefix' => 'teach'],
 });
 
 
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
@@ -93,7 +94,7 @@ Route::group(['namespace' => 'App\Http\Controllers\CheckHometask', 'prefix' => '
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/course/{course}', 'IndexController')->name('checkHometask.main.index');
         Route::get('/course/{course}/hometask/{hometask}', 'CreateController')->name('checkHometask.main.create');
-        Route::post('/', 'UpdateController')->name('checkHometask.main.store');
+        Route::patch('/course/{course}/hometask/{hometask}', 'UpdateController')->name('checkHometask.main.update');
     });
 
 });

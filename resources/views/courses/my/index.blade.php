@@ -21,7 +21,7 @@
 
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                             <div class="course-item">
-                                <img src="{{ 'storage/' . $course->img }}" class="img-fluid" alt="...">
+                                <img src="{{ asset('storage/' . $course->img) }}" class="img-fluid" alt="...">
                                 <div class="course-content">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h4>{{$course->category}}</h4>
@@ -32,7 +32,7 @@
                                     <p>{{$course->description}}</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-profile d-flex align-items-center">
-                                            <img src="{{'storage/' . $course->user->img }}" class="img-fluid" alt="">
+                                            <img src="{{asset('storage/' . $course->user->img) }}" class="img-fluid" alt="">
                                             <span>{{$course->user->nickname}}</span>
                                         </div>
                                         <div class="trainer-rank d-flex align-items-center">

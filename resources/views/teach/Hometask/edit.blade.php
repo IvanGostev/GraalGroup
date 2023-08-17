@@ -23,7 +23,7 @@
                     @method('patch')
                     <div class="form-group">
                         <input type="text" class="form-control" name="title"
-                               placeholder="Названия поста" value="{{ old('title') ?? $thisHometask->title}}">
+                               placeholder="Названия" value="{{ old('title') ?? $thisHometask->title}}">
                         @error('title')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror

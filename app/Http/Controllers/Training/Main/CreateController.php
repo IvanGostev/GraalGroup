@@ -15,13 +15,14 @@ class CreateController extends Controller
 {
     public function __invoke(Course $course, Hometask $hometask)
     {
+
         $lessons = Lesson::where('course_id', $course->id)->get();
         $hometasks = Hometask::where('course_id', $course->id)->get();
         $data['course_id'] = $course->id;
         $data['user_id'] = auth()->user()->id;
         UserCourse::firstOrCreate($data);
         $data['hometask_id'] = $hometask->id;
-        UserHometask::create($data);
+         UserHometask::create($data);
         $userHometasks = UserHometask::where('user_id', auth()->user()->id)
             ->where('course_id', $data['course_id'])
             ->where('hometask_id', $data['hometask_id'])

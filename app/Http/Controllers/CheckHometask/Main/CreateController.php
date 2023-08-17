@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
-    public function __invoke(Course $course,StatusHometask $hometask)
+    public function __invoke(Course $course, StatusHometask $hometask)
     {
         return view('checkHometask.main.create', compact('hometask', 'course'));
     }
