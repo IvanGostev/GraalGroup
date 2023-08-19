@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>GRAAL GROUP</title>
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
     <!-- Google Font: Source Sans Pro -->

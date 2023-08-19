@@ -19,13 +19,13 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <h3>Users</h3>
+                        <h3>Пользователи</h3>
                     </div>
                     <div class="col-6">
                         <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary btn-lg mb-3">
                             <ya-tr-span data-index="118-0" data-translated="false" data-source-lang="en"
                                         data-target-lang="ru" data-value="Primary" data-translation="Первичный"
-                                        data-ch="1" data-type="trSpan">Create
+                                        data-ch="1" data-type="trSpan">Создать
                             </ya-tr-span>
                         </a>
                         <table class="table table-hover text-nowrap">

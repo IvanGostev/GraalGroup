@@ -85,6 +85,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 Route::group(['namespace' => 'App\Http\Controllers\Training', 'prefix' => 'training'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/course/{course}/lesson/{lesson}', 'ShowController')->name('training.main.show');
+        Route::get('/course/{course}', 'FirstController')->name('training.main.first');
         Route::get('/course/{course}/homework/{hometask}', 'CreateController')->name('training.main.create');
         Route::post('/', 'StoreController')->name('training.main.store');
     });

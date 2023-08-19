@@ -58,7 +58,7 @@
                                         <del class="fs-4 text-muted">$750</del>
                                     </div>
                                     <div class="d-grid">
-                                        <a href="{{ route('training.main.show', [$course->id, 1]) }}" class="btn btn-primary mb-2">{{ $course->tied ? 'Открыть' : 'Купить' }}</a>
+                                        <a href="{{ route('training.main.first', $course->id) }}" class="btn btn-primary mb-2">{{ $course->tied ? 'Открыть' : 'Купить' }}</a>
                                     </div>
                                 </div>
                             </div>

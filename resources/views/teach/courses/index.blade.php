@@ -18,21 +18,21 @@
                 <div class="row" data-aos="zoom-in" data-aos-delay="100">
                     @foreach($courses as $course)
 
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="course-item">
-                                <img src="{{ 'storage/' . $course->img }}" class="img-fluid" alt="...">
+
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="max-height: 535.28px !important">
+                            <div class="course-item" style="max-width: 414.39px !important;">
+                                <img src="{{ asset('storage/' . $course->img) }}" class="img-fluid" alt="..." style="width: 100% !important; max-height: 276px !important">
                                 <div class="course-content">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h4>{{$course->category}}</h4>
+                                        <h4 style="overflow: hidden; max-height: 30.8px">{{$course->category}}</h4>
                                         <p class="price">${{$course->price}}</p>
                                     </div>
 
-                                    <h3><a href="{{ route('course.main.show', $course->id) }}">{{$course->title}}</a>
-                                    </h3>
-                                    <p>{{$course->description}}</p>
+                                    <h3 style="overflow: hidden; max-height: 24px"><a href="{{ route('course.main.show', $course->id) }}">{{$course->title}}</a></h3>
+                                    <p style="overflow: hidden; height: 42px" >{{$course->description}}</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-profile d-flex align-items-center">
-                                            <img src="{{'storage/' . $course->user->img }}" class="img-fluid" alt="">
+                                            <img src="{{ asset('storage/' . $course->user->img) }}" class="img-fluid" alt="">
                                             <span>{{$course->user->nickname}}</span>
                                         </div>
                                         <div class="trainer-rank d-flex align-items-center">
@@ -48,16 +48,13 @@
                                                 Delete
                                             </button>
                                         </form>
-
                                     </div>
-
                                 </div>
-                                            <a href="{{ route('checkHometask.main.index', $course->id) }}" class="btn btn-outline-primary" style="width: 100%;">Проверка домашнего задание</a>
-
+                                <a href="{{ route('checkHometask.main.index', $course->id) }}" class="btn btn-outline-primary" style="width: 100%;">Проверка домашнего задание</a>
                             </div>
-
                         </div>
                     @endforeach
+
 
                 </div>
 

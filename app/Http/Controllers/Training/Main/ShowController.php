@@ -15,6 +15,7 @@ class ShowController extends Controller
 {
     public function __invoke(Course $course, Lesson $lesson)
     {
+
         $lessons = Lesson::where('course_id', $course->id)->get();
         $hometasks = Hometask::where('course_id', $course->id)->get();
         $data['course_id'] = $course->id;
