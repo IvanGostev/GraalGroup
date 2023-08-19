@@ -18,13 +18,15 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="card-body">{!! $thisHometask->content !!}</div>
-{{--                    <div class="form-group">--}}
-{{--                        <a href="{{ $thisHometask->href->type == 'lesson' ? route('training.main.show', $course->id, $thisHometask->href->id) : route('training.main.create', $course->id, $thisHometask->href->id)}}" class="btn btn-primary">Следующий шаг</a>--}}
-{{--                    </div>--}}
-                 @if($thisHometask->statusHometask->comment)
-                    <h5>Ответ преподавателя</h5>
-                    <div class="card-body">{!! $thisHometask->statusHometask->comment !!}</div>
-                 @endif
+                {{--                    <div class="form-group">--}}
+                {{--                        <a href="{{ $thisHometask->href->type == 'lesson' ? route('training.main.show', $course->id, $thisHometask->href->id) : route('training.main.create', $course->id, $thisHometask->href->id)}}" class="btn btn-primary">Следующий шаг</a>--}}
+                {{--                    </div>--}}
+                @if($thisHometask->statusHometask != null)
+                    @if($thisHometask->statusHometask->comment != null)
+                        <h5>Ответ преподавателя</h5>
+                        <div class="card-body">{!! $thisHometask->statusHometask->comment !!}</div>
+                    @endif
+                @endif
 
             </div><!-- /.container-fluid -->
             <form action=" {{ route('training.main.store') }}" method="post">
@@ -32,7 +34,7 @@
 
                 <div class="form-group mt-3">
                                 <textarea class="form-control" name="content" rows="5" placeholder="Решение"
-                                          required></textarea>
+                                          required>{{$thisHometask->statusHometask->content}}</textarea>
                 </div>
                 <input hidden="hidden" name="course_id" value="{{$course->id}}">
                 <input hidden="hidden" name="hometask_id" value="{{$thisHometask->id}}">

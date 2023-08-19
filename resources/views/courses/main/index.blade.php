@@ -20,7 +20,7 @@
 
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="max-height: 510.28px !important">
                             <div class="course-item" style="max-width: 414.39px !important;">
-                                <img src="{{ 'storage/' . $course->img }}" class="img-fluid" alt="..." style="width: 100% !important; max-height: 276px !important">
+                                <img src="{{ asset('storage/' . $course->img) }}" class="img-fluid" alt="..." style="width: 100% !important; max-height: 276px !important">
                                 <div class="course-content">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h4 style="overflow: hidden; max-height: 30.8px">{{$course->category}}</h4>
@@ -31,7 +31,7 @@
                                     <p style="overflow: hidden; max-height: 42px" >{{$course->description}}</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-profile d-flex align-items-center">
-                                            <img src="{{'storage/' . $course->user->img }}" class="img-fluid" alt="">
+                                            <img src="{{ asset('storage/' . $course->user->img) }}" class="img-fluid" alt="">
                                             <span>{{$course->user->nickname}}</span>
                                         </div>
                                         <div class="trainer-rank d-flex align-items-center">

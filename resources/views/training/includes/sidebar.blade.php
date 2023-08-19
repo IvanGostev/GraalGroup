@@ -76,10 +76,10 @@
                                     $status = ['title' => 'Отправлено на проверку', 'color' => 'primary'];
                                     break;
                                 case 2:
-                                    $status = ['title' => 'Принято', 'color' => 'success'];
+                                    $status = ['title' => 'Отправлено на доработку', 'color' => 'warning'];
                                     break;
                                 case 3:
-                                    $status = ['title' => 'Отправлено на доработку', 'color' => 'warning'];
+                                    $status = ['title' => 'Принято', 'color' => 'success'];
                                     break;
                             }
                             ?>

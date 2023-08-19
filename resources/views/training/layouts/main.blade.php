@@ -56,12 +56,6 @@
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <form action="{{ route('logout') }}" method="post">
-            @csrf
-            <input class="btn btn-outline-primary" type="submit" value="Выйти">
-        </form>
-    </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

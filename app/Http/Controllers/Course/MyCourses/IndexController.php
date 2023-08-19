@@ -22,7 +22,7 @@ class IndexController extends Controller
             $courses = $courses[0];
             return view('courses.my.index', compact('courses'));
         } else {
-            return view('courses.my.adsence');
+            return view('courses.my.absence');
         }
 
     }
