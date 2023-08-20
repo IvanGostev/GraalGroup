@@ -34,7 +34,7 @@
 
                 <div class="form-group mt-3">
                                 <textarea class="form-control" name="content" rows="5" placeholder="Решение"
-                                          required>{{$thisHometask->statusHometask->content}}</textarea>
+                                          required>{{ $thisHometask->statusHometask ? $thisHometask->statusHometask->content : ''}}</textarea>
                 </div>
                 <input hidden="hidden" name="course_id" value="{{$course->id}}">
                 <input hidden="hidden" name="hometask_id" value="{{$thisHometask->id}}">
