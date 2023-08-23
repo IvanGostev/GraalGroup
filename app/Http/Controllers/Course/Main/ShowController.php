@@ -10,7 +10,7 @@ class ShowController extends Controller
 {
     public function __invoke(Course $course)
     {
-        $courses = User::where('id', '!=', $course->id)
+        $courses = Course::where('id', '!=', $course->id)
             ->get()
             ->take(3);
         return view('courses.main.show', compact('course', 'courses'));
